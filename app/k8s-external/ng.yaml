@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: nginx-app-10905
   name: nginx-ng-10905
 spec:
   selector:
