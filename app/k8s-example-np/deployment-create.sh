@@ -1,0 +1,1 @@
+microk8s kubectl create deployment microbot --image=dontrebootme/microbot:v1
