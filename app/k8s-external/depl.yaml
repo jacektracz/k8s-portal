@@ -1,22 +1,22 @@
 apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     labels:
-       app: nginx-app-10905
-     name: nginx-depl-10905
-   spec:
-     replicas: 5
-     selector:
-       matchLabels:
-         app: nginx-app-10905
-     template:
-       metadata:
-         labels:
-           app: nginx-app-10905
-       spec:
-         containers:
-         - image: gcr.io/google-samples/node-hello:1.0
-           name: nginx-cont-10905
-           ports:
-           - containerPort: 10907
+  kind: Deployment
+  metadata:
+    labels:
+      app: nginx-app-10905
+    name: nginx-depl-10905
+  spec:
+    replicas: 5
+    selector:
+      matchLabels:
+        app: nginx-app-10905
+    template:
+      metadata:
+        labels:
+          app: nginx-app-10905
+      spec:
+        containers:
+        - image: gcr.io/google-samples/node-hello:1.0
+          name: nginx-cont-10905
+          ports:
+          - containerPort: 10907
    
