@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-busybox
+  labels:
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-busybox
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: nginx-busybox
+        tier: backend
+    spec:
+      volumes:
+      - name: code
+        persistentVolumeClaim:
+          claimName: code-pv-claim
+      - name: config
+        configMap:
+          name: nginx-config
+          items:
+          - key: config
+            path: site.conf
+      containers:
+      - name: nginx-busybox
+        image: busybox
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: code
+          mountPath: /app 
+        - name: config
+          mountPath: /etc/nginx/conf.d

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-10901
+  labels:
+    tier: backend
+spec:
+  selector:
+    app: nginx-10901
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 10900
+  externalIPs:
+  - 146.59.19.222    
