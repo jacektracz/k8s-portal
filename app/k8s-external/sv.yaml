@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-svc-10905
+  name: nginx-clusterip-10905
   labels:
     tier: backend
 spec:
