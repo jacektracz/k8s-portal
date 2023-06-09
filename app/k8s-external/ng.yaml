@@ -1,22 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: nginx-app-10905
-  name: nginx-depl-10905
+  name: nginx-ng-10905
 spec:
-  replicas: 5
   selector:
     matchLabels:
       app: nginx-app-10905
+  replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
         app: nginx-app-10905
     spec:
       containers:
-      - image: gcr.io/google-samples/node-hello:1.0
-        name: nginx-cont-hello-10905
+      - name: nginx-cnt-ng-10905
+        image: nginx:1.14.2
         ports:
         - containerPort: 80
-   
