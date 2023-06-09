@@ -9,7 +9,13 @@ spec:
   selector:
     app: nginx-app-10905
     tier: backend
-  ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 30007
+  #ports:
+  #  - port: 80
+  #    targetPort: 80
+  #    nodePort: 30007
+  ports: 
+    - name: http
+      protocol: TCP
+      nodePort: 30007 # The port our networked devices will look on for the application. 
+      port: 9090 
+      targetPort: 80 # The port of the target ReplicaSet. 
