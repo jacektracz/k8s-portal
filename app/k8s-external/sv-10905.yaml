@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc-10905
+  labels:
+    tier: backend
+spec:
+  selector:
+    app: nginx-app-10905
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 10905
+#  externalIPs:
+#  - 146.59.19.222    
