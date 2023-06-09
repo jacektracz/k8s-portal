@@ -3,9 +3,6 @@ microk8s kubectl create deployment microbot --image=dontrebootme/microbot:v1
 microk8s kubectl expose deployment microbot --type=NodePort --port=80 --name=microbot-service
 
 
-
-
-
 microk8s kubectl describe services microbot-service
 
 Name:                     microbot-service
@@ -27,4 +24,4 @@ External Traffic Policy:  Cluster
 Events:                   <none>
 
 
-sudo curl http://146.59.19.222:30007
+sudo curl http://146.59.19.222:32368
