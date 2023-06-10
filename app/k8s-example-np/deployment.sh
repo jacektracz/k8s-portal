@@ -27,3 +27,5 @@ External Traffic Policy:  Cluster
 Events:                   <none>
 
 sudo curl http://146.59.19.222:30013
+
+sudo ufw allow 30013
